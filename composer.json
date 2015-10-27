@@ -1,0 +1,22 @@
+{
+  "name" : "Blog",
+  "description" : "Sistema de blogs",
+  "authors" : [
+    {
+      "name": "Autor  1 do sistema",
+      "email" : "email1@gmail.com"
+    }
+  ],
+  "require":{
+    "php": ">=5.4.0"
+  },
+  "autoload":{
+    "psr-4":{
+      "Models\\": "app/Models",
+      "Views\\": "app/Views",
+      "Config\\": "app/Config"
+    }
+  },
+  "version": "1.0",
+  require
+}

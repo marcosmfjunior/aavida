@@ -1,0 +1,145 @@
+.h {
+	background: url(images/header.jpg) no-repeat center top;
+	padding-top: 180px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;	
+	width: 100%;
+	height: 100%;
+	color: white;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.h h1{
+	hei: 50%;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+	font-size: 45px;
+
+}
+.h h3{
+	font-weight: 700;
+	color: white;	
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.espacamento{
+	padding-top: 60px;
+}
+
+.navbar-right {
+ margin-right: 0px;
+}
+
+/* new nav */
+.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
+.headroom--unpinned {top: -100px;}
+.headroom--pinned {top: 0;}
+
+.titulo{
+	background: url(images/line.png) left center repeat-x;
+}
+
+.titulo h3 {
+	width: 220px;
+	margin: 0 auto;
+	background: #fff;
+	font-family: 'Amatic SC', cursive;
+	font-size: 40px;
+	color: #5d5d5d;
+	text-align: center;
+}
+
+.blocoSlider {
+	width: 220px;
+	margin: 0 auto;
+	font-family: 'Amatic SC', cursive;
+	font-size: 50px;
+	color: #5d5d5d;
+	text-align: center;
+}
+
+#pinContainer {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+.panel {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+}
+.somos{
+	background-color: black;
+	height: 100%;
+}
+.historia{
+	background: url(images/2.jpg)  rgba(0, 0, 0, 0.6);
+	height: 100%;
+	/*background:  rgba(0, 0, 0, 0.6);*/
+}
+.missao{
+	background-color: red;
+	height: 100%;
+}
+.mantedora{
+	background-color: pink;
+	height: 100%;
+}
+
+/* Navigation */
+#tf-menu {
+	padding: 20px;
+	transition: all 0.8s;
+}
+#tf-menu.navbar-default {
+	background-color: rgba(248, 248, 248, 0);
+	border-color: rgba(231, 231, 231, 0);
+}
+#tf-menu a.navbar-brand {
+text-transform: uppercase;
+font-size: 22px;
+color: #fff;
+font-weight: 900;
+}
+
+#tf-menu.navbar-default .navbar-nav > li > a {
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.on {
+	background-color: #E7E7E7 !important;
+	padding: 0 !important;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #FCAC45 !important;
+	background-color: transparent;
+	font-weight: 700;
+}
+
+.navbar-toggle {
+	border-radius: 0;
+	}
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+	background-color: #FCAC45;
+	border-color: #FCAC45;
+	}
+.navbar-default .navbar-toggle:hover>.icon-bar {
+	background-color: #FFF;
+	}

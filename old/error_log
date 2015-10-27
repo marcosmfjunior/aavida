@@ -1,0 +1,15 @@
+[28-Jul-2015 18:25:36 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/marcosmfjunior/public_html/aavida/app/Models/Blog.php on line 13
+[29-Jul-2015 15:52:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.imagem' doesn't exist' in /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php:19
+Stack trace:
+#0 /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php(19): PDOStatement->execute()
+#1 /home/marcosmfjunior/public_html/aavida/noticia.php(51): Models\Imagem->getImagemPost('1')
+#2 /home/marcosmfjunior/public_html/aavida/noticia.php(30): exibirComentarios('1')
+#3 {main}
+  thrown in /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php on line 19
+[10-Aug-2015 01:08:51 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.imagem' doesn't exist' in /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php:19
+Stack trace:
+#0 /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php(19): PDOStatement->execute()
+#1 /home/marcosmfjunior/public_html/aavida/noticia.php(51): Models\Imagem->getImagemPost('4')
+#2 /home/marcosmfjunior/public_html/aavida/noticia.php(30): exibirComentarios('4')
+#3 {main}
+  thrown in /home/marcosmfjunior/public_html/aavida/app/Models/Imagem.php on line 19

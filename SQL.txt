@@ -1,0 +1,100 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `blog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `blog` ;
+
+-- -----------------------------------------------------
+-- Table `blog`.`blog`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blog`.`blog` ;
+
+CREATE TABLE IF NOT EXISTS `blog`.`blog` (
+  `id_blog` INT NOT NULL AUTO_INCREMENT,
+  `titulo` VARCHAR(75) NULL,
+  `descricao` VARCHAR(145) NULL,
+  `usuario` VARCHAR(45) NULL,
+  `senha` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_blog`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blog`.`post`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blog`.`post` ;
+
+CREATE TABLE IF NOT EXISTS `blog`.`post` (
+  `id_post` INT NOT NULL AUTO_INCREMENT,
+  `id_blog` INT NOT NULL,
+  `titulo` VARCHAR(45) NULL,
+  `texto` TEXT NULL,
+  `data` DATETIME NULL,
+  PRIMARY KEY (`id_post`),
+  INDEX `fk_post_blog_idx` (`id_blog` ASC),
+  CONSTRAINT `fk_post_blog`
+    FOREIGN KEY (`id_blog`)
+    REFERENCES `blog`.`blog` (`id_blog`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blog`.`comentario`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blog`.`comentario` ;
+
+CREATE TABLE IF NOT EXISTS `blog`.`comentario` (
+  `id_comentario` INT NOT NULL AUTO_INCREMENT,
+  `id_post` INT NOT NULL,
+  `nome` VARCHAR(45) NULL,
+  `texto` TEXT NULL,
+  `data` DATETIME NULL,
+  `aprovado` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id_comentario`),
+  INDEX `fk_comentario_post1_idx` (`id_post` ASC),
+  CONSTRAINT `fk_comentario_post1`
+    FOREIGN KEY (`id_post`)
+    REFERENCES `blog`.`post` (`id_post`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `blog`.`blog`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blog`;
+INSERT INTO `blog`.`blog` (`id_blog`, `titulo`, `descricao`, `usuario`, `senha`) VALUES (1, 'Blog sobre Montanhas', 'Descricao', 'user', '1234');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blog`.`post`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blog`;
+INSERT INTO `blog`.`post` (`id_post`, `id_blog`, `titulo`, `texto`, `data`) VALUES (NULL, 1, 'titulo post', 'texto do post', '2015-05-11 08:14:00');
+INSERT INTO `blog`.`post` (`id_post`, `id_blog`, `titulo`, `texto`, `data`) VALUES (NULL, 1, 'post 2', 'texto do post 2', '2015-05-11 10:03:00');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blog`.`comentario`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blog`;
+INSERT INTO `blog`.`comentario` (`id_comentario`, `id_post`, `nome`, `texto`, `data`, `aprovado`) VALUES (1, 1, 'Fulano', 'muito legal issae', '2015-05-18 09:38:01', 1);
+INSERT INTO `blog`.`comentario` (`id_comentario`, `id_post`, `nome`, `texto`, `data`, `aprovado`) VALUES (2, 1, 'Cara Chato', 'o dono do blog é capiroto', '2015-05-17 23:00:00', 0);
+
+COMMIT;
+

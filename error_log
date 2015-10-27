@@ -1,0 +1,1 @@
+[10-Aug-2015 01:21:55 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/marcosmfjunior/public_html/aavida/app/Models/Blog.php on line 13
